@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		613AA76E1F31A34700446856 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 613AA76D1F31A34700446856 /* main.c */; };
+		61C9ED5A1F31A6CF00E2CE8F /* longest-palindromic-substring.c in Sources */ = {isa = PBXBuildFile; fileRef = 61C9ED511F31A6CF00E2CE8F /* longest-palindromic-substring.c */; };
+		61C9ED5B1F31A6CF00E2CE8F /* palindromic-substrings.c in Sources */ = {isa = PBXBuildFile; fileRef = 61C9ED551F31A6CF00E2CE8F /* palindromic-substrings.c */; };
+		61C9ED5C1F31A6CF00E2CE8F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 61C9ED561F31A6CF00E2CE8F /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,20 @@
 /* Begin PBXFileReference section */
 		613AA76A1F31A34700446856 /* Programming-LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Programming-LeetCode"; sourceTree = BUILT_PRODUCTS_DIR; };
 		613AA76D1F31A34700446856 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		61C9ED4C1F31A6CF00E2CE8F /* 3sum */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 3sum; sourceTree = "<group>"; };
+		61C9ED4D1F31A6CF00E2CE8F /* 4sum */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 4sum; sourceTree = "<group>"; };
+		61C9ED4E1F31A6CF00E2CE8F /* bulb-switcher */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "bulb-switcher"; sourceTree = "<group>"; };
+		61C9ED4F1F31A6CF00E2CE8F /* continuous-subarray-sum */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "continuous-subarray-sum"; sourceTree = "<group>"; };
+		61C9ED501F31A6CF00E2CE8F /* longest-common-prefix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "longest-common-prefix"; sourceTree = "<group>"; };
+		61C9ED511F31A6CF00E2CE8F /* longest-palindromic-substring.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "longest-palindromic-substring.c"; sourceTree = "<group>"; };
+		61C9ED521F31A6CF00E2CE8F /* longest-substring-without-repeating-characters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "longest-substring-without-repeating-characters"; sourceTree = "<group>"; };
+		61C9ED531F31A6CF00E2CE8F /* maximum-subarray */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "maximum-subarray"; sourceTree = "<group>"; };
+		61C9ED541F31A6CF00E2CE8F /* minimum-moves-to-equal-array-elements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "minimum-moves-to-equal-array-elements"; sourceTree = "<group>"; };
+		61C9ED551F31A6CF00E2CE8F /* palindromic-substrings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "palindromic-substrings.c"; sourceTree = "<group>"; };
+		61C9ED561F31A6CF00E2CE8F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		61C9ED571F31A6CF00E2CE8F /* remove-duplicates-from-sorted-array */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "remove-duplicates-from-sorted-array"; sourceTree = "<group>"; };
+		61C9ED581F31A6CF00E2CE8F /* search-insert-position */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "search-insert-position"; sourceTree = "<group>"; };
+		61C9ED591F31A6CF00E2CE8F /* valid-parentheses */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "valid-parentheses"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +74,20 @@
 		613AA76C1F31A34700446856 /* Programming-LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				61C9ED4C1F31A6CF00E2CE8F /* 3sum */,
+				61C9ED4D1F31A6CF00E2CE8F /* 4sum */,
+				61C9ED4E1F31A6CF00E2CE8F /* bulb-switcher */,
+				61C9ED4F1F31A6CF00E2CE8F /* continuous-subarray-sum */,
+				61C9ED501F31A6CF00E2CE8F /* longest-common-prefix */,
+				61C9ED511F31A6CF00E2CE8F /* longest-palindromic-substring.c */,
+				61C9ED521F31A6CF00E2CE8F /* longest-substring-without-repeating-characters */,
+				61C9ED531F31A6CF00E2CE8F /* maximum-subarray */,
+				61C9ED541F31A6CF00E2CE8F /* minimum-moves-to-equal-array-elements */,
+				61C9ED551F31A6CF00E2CE8F /* palindromic-substrings.c */,
+				61C9ED561F31A6CF00E2CE8F /* README.md */,
+				61C9ED571F31A6CF00E2CE8F /* remove-duplicates-from-sorted-array */,
+				61C9ED581F31A6CF00E2CE8F /* search-insert-position */,
+				61C9ED591F31A6CF00E2CE8F /* valid-parentheses */,
 				613AA76D1F31A34700446856 /* main.c */,
 			);
 			path = "Programming-LeetCode";
@@ -120,6 +151,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				613AA76E1F31A34700446856 /* main.c in Sources */,
+				61C9ED5A1F31A6CF00E2CE8F /* longest-palindromic-substring.c in Sources */,
+				61C9ED5C1F31A6CF00E2CE8F /* README.md in Sources */,
+				61C9ED5B1F31A6CF00E2CE8F /* palindromic-substrings.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +282,7 @@
 				613AA7731F31A34700446856 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
