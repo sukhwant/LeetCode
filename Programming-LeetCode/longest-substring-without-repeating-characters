@@ -1,0 +1,38 @@
+int lengthOfLongestSubstring(char* s) {
+    
+    int i=0,temp_index;
+    int max_length=0;
+    int new_length=0;
+    int start=0;
+    int visited[256]={0};
+    for(i=0;s[i]!='\0';i++){
+        if(visited[s[i]] == 0){
+            //Not included in subarray. Include it.
+            visited[s[i]]=i+1; // Present at index i;
+            new_length++;
+            if(new_length>max_length){
+                max_length = new_length;
+            }
+        } else{
+            //Get index of that character.
+            temp_index = visited[s[i]] - 1;
+            new_length = i-temp_index;
+            if(new_length>max_length){
+                max_length = new_length;
+            }
+            
+            //Code to un-visit remaining.
+            int j=0;
+            for(j=start;j<=temp_index;j++){
+                visited[s[j]]=0;
+            }
+            
+            //set new Start
+            start =temp_index+1;
+            
+            // Mark current as visited
+            visited[s[i]]=i+1;
+        }
+    }
+    return max_length;
+}

@@ -1,0 +1,18 @@
+#include<stdlib.h>
+
+int cmpfunc (const void * a, const void * b){
+    return ( *(int*)a - *(int*)b );
+}
+
+int minMoves(int* nums, int numsSize) {
+    qsort(nums, numsSize, sizeof(int), cmpfunc);
+    
+    int prevAns = nums[numsSize-1]-nums[0];
+    int ans=prevAns,i;
+    
+    for(i=numsSize-2;i>=0;i--){
+        prevAns = prevAns+nums[i]-nums[i+1];
+        ans+=prevAns;
+    }
+    return ans;
+}

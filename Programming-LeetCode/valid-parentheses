@@ -1,0 +1,26 @@
+#define MAX_LENGTH 1000000
+
+bool isValid(char* s) {
+    char* stack = (char*)malloc(sizeof(char)*MAX_LENGTH);
+    
+    int i=0;
+    int top=0;
+    char temp;
+    while(s[i] != '\0'){
+        if(s[i] == '(' || s[i] == '{' || s[i] == '['){
+            stack[top++]=s[i];
+        } else{
+            temp = stack[--top];
+            if((s[i]==')' && temp=='(') || (s[i]==']' && temp=='[') || (s[i]=='}' && temp=='{')){
+                
+            } else{
+                return false;
+            }
+        }
+        i++;
+    }
+    
+    if(top!=0){
+        return false;
+    }
+    return true;

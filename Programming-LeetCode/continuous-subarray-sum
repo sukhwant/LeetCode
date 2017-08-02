@@ -1,0 +1,17 @@
+bool checkSubarraySum(int* nums, int numsSize, int k) {
+    int i,j;
+    for(i=0;i<numsSize;i++){
+        int sum=nums[i];
+        for(j=i+1;j<numsSize;j++){
+            sum += nums[j];
+            if(k==0){
+                if(sum==0){
+                    return true;
+                }
+            }else if (sum%k == 0){
+                return true;
+            }
+        }
+    }
+    return false;
+}

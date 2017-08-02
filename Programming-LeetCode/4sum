@@ -1,0 +1,88 @@
+#include<limits.h>
+
+#define MAX_SIZE 1000000
+
+int cmpfunc (const void * a, const void * b)
+{
+    return ( *(int*)a - *(int*)b );
+}
+
+int** threeSum(int* nums, int start, int numsSize, int* returnSize, int target) {
+    int i;
+    int sum=target;
+    int p=0;
+    int **answer = (int**) malloc(sizeof(int*)*MAX_SIZE);
+    *returnSize = 0;
+    
+    //qsort(nums, numsSize, sizeof(int), cmpfunc);
+    //printf("Finding Sum of Three with target %d\n", target);
+    int previous_i = INT_MIN;
+    for(i=start;i<numsSize;i++){
+        if(nums[i]==previous_i){
+            continue;
+        }
+        previous_i = nums[i];
+        int j=i+1,k=numsSize-1;
+        int remainder = sum - nums[i];
+        int previous_j = INT_MIN;
+        int previous_k = INT_MIN;
+        while(j<k){
+            if(previous_j == nums[j] && previous_k == nums[k]){
+                j++;
+                k--;
+                continue;
+            }
+            
+            if(nums[j] + nums[k] == remainder){
+                // Found
+                int *subArray = (int *) malloc(sizeof(int)*3);
+                subArray[0]=nums[i];
+                subArray[1]=nums[j];
+                subArray[2]=nums[k];
+                //printf("%d %d %d\n", nums[i], nums[j], nums[k]);
+                answer[p++]=subArray;
+                (*returnSize)++;
+                previous_j = nums[j];
+                previous_k = nums[k];
+                k--;
+                j++;
+            } else if(nums[j] + nums[k] > remainder){
+                previous_k = nums[k];
+                k--;
+            } else{
+                previous_j = nums[j];
+                j++;
+            }
+        }
+    }
+    return answer;
+}
+
+
+int** fourSum(int* nums, int numsSize, int target, int* returnSize) {
+    
+    qsort(nums, numsSize, sizeof(int), cmpfunc);
+    int i,j,p=0;
+    int previous_i = INT_MIN;
+    int **answer = (int**) malloc(sizeof(int*)*MAX_SIZE);
+    *returnSize = 0;
+    for(i=0;i<numsSize;i++){
+        if(nums[i]==previous_i){
+            continue;
+        }
+        previous_i = nums[i];
+        int *returnSize_temp = (int*)malloc(sizeof(int));
+        int **answer_temp = threeSum(nums, i+1, numsSize, returnSize_temp, target-nums[i]);
+        for(j=0;j<*returnSize_temp;j++){
+            //printf("%d %d %d %d\n", answer_temp[j][0], answer_temp[j][1], answer_temp[j][2], nums[i]);
+            int *subArray = (int *) malloc(sizeof(int)*4);
+            subArray[0]=nums[i];
+            subArray[1]=answer_temp[j][0];
+            subArray[2]=answer_temp[j][1];
+            subArray[3]=answer_temp[j][2];
+            answer[p++]=subArray;
+            (*returnSize)++;
+        }
+    }
+    return answer;
+}

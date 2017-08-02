@@ -1,0 +1,59 @@
+#include<limits.h>
+
+#define MAX_SIZE 1000000
+
+int cmpfunc (const void * a, const void * b)
+{
+    return ( *(int*)a - *(int*)b );
+}
+
+int** threeSum(int* nums, int numsSize, int* returnSize) {
+    int i;
+    int sum=0;
+    int p=0;
+    int **answer = (int**) malloc(sizeof(int*)*MAX_SIZE);
+    *returnSize = 0;
+    
+    qsort(nums, numsSize, sizeof(int), cmpfunc);
+    
+    int previous_i = INT_MIN;
+    for(i=0;i<numsSize;i++){
+        if(nums[i]==previous_i){
+            continue;
+        }
+        previous_i = nums[i];
+        int j=i+1,k=numsSize-1;
+        int remainder = sum - nums[i];
+        int previous_j = INT_MIN;
+        int previous_k = INT_MIN;
+        while(j<k){
+            if(previous_j == nums[j] && previous_k == nums[k]){
+                j++;
+                k--;
+                continue;
+            }
+            
+            if(nums[j] + nums[k] == remainder){
+                // Found
+                int *subArray = (int *) malloc(sizeof(int)*3);
+                subArray[0]=nums[i];
+                subArray[1]=nums[j];
+                subArray[2]=nums[k];
+                //printf("%d %d %d\n", nums[i], nums[j], nums[k]);
+                answer[p++]=subArray;
+                (*returnSize)++;
+                previous_j = nums[j];
+                previous_k = nums[k];
+                k--;
+                j++;
+            } else if(nums[j] + nums[k] > remainder){
+                previous_k = nums[k];
+                k--;
+            } else{
+                previous_j = nums[j];
+                j++;
+            }
+        }
+    }
+    return answer;
+}
